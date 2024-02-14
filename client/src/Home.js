@@ -9,14 +9,14 @@ const Home = () => {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
     axios
-      .get("https://todo-foqz.onrender.com/get")
+      .get("https://todo-foqz.onrender.com")
       .then((result) => setTodos(result.data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleEdit = (id) => {
     axios
-      .put("https://todo-foqz.onrender.com/update/"+id)
+      .put("https://todo-foqz.onrender.com"+id)
       .then((result) => {
         window.location.reload()
       })
@@ -25,7 +25,7 @@ const Home = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("https://todo-foqz.onrender.com/delete/"+id)
+      .delete("https://todo-foqz.onrender.com"+id)
       .then((result) => {
         window.location.reload()
       })
